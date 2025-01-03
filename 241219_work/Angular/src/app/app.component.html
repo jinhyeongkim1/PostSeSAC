@@ -226,6 +226,9 @@
         </defs>
       </svg>
       <h1>Hello, {{ title }}</h1>
+      <h1>카운터: {{ count }}</h1> <!-- 카운트를 화면에 출력 -->
+      <button (click)="increment()">+1</button> 
+      <button (click)="decrement()">-1</button>
       <p>Congratulations! Your app is running. 🎉</p>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
