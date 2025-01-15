@@ -4,50 +4,100 @@
   align-items: center;
   height: 100vh;
   background-color: #f0f0f0;
+  overflow: hidden;  /* 애니메이션 중 화면 밖으로 나가지 않게 */
 }
 
+
+/* 상단로고 */
+
+.header {
+  display: flex;
+  justify-content: space-between; /* 좌우 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  padding: 0 20px; /* 왼쪽, 오른쪽 여백 */
+  height: 80px; /* 헤더 높이 */
+  position: fixed;
+  top: 0; 
+  width: 100%; /* 화면 가로 크기에 맞게 넓이 설정 */
+  z-index: 10;
+}
+
+.logo {
+  margin-left: 20px;
+  font-size: 36px; 
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+.vcount {
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+/* 배경이미지 */
 .image {
   width: 500px; /* 이미지 크기 */
   height: 300px; /* 이미지 크기 */
   object-fit: cover; /* 이미지 비율을 유지하면서 크기 맞추기 */
 }
 
+
+/* 버튼 */
 .button {
-  position: absolute; /* 버튼을 이미지 위에 절대 위치로 배치 */
-  top: 50%; /* 이미지의 세로 가운데에 배치 */
-  left: 50%; /* 이미지의 가로 가운데에 배치 */
-  transform: translate(-50%, 350%); /* 정확히 중앙에 위치시키기 위해 */
+  position: absolute; /* 이미지 위에 배치 */
+  transform: translate(-340%, 200%); 
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 30px;
+  background-color: rgba(227, 122, 57, 0.6);
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50%;/* 동그라미미 */
 }
 
 .button:hover {
   background-color: rgba(0, 0, 0, 0.8); /* 버튼에 호버 효과 */
 }
 
-.counter-text {
+/* 이미지버튼 */
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 한 줄에 4개의 버튼 배치 */
+  gap: 10px; /* 버튼들 사이에 간격 설정 */
+  justify-items: center; /* 각 버튼을 가로로 중앙 정렬 */
+  margin-top: 150px;
+}
+
+.button-image {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.button-image img {
+  width: 100px; /* 이미지 크기 */
+  height: 100px; /* 이미지 크기 */
+  display: block;
+}
+
+
+/* 첫페이지 텍스트 */
+.page1-text {
   position: absolute;         
-  top: 50%;                   
-  left: 50%;                  
-  transform: translate(-50%, 50%); 
   text-align: center;
-  font-size: 24px;
-  /* font-family: 'Batang', serif; */
+  transform: translate(-50%, -30%); 
+  font-size: 18px;
   color: black;
 
   }
 
 
-  .page2-text {
-    position: absolute;         
-    text-align: center;
-    font-size: 12px;
-    /* font-family: 'Batang', serif; */
-    color: black;
-  
-    }
+.page2-text {
+  position: absolute;         
+  text-align: center;
+  top: 200px;
+  font-size: 18px;
+  /* font-family: 'Batang', serif; */
+  color: gray;
+  }
