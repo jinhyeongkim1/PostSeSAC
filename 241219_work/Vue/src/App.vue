@@ -5,15 +5,19 @@
     <p>{{ count }}</p>
     <button class="increment-btn" @click="increment">더하기</button>
     <button class="decrement-btn" @click="decrement">빼기</button>
+
+    <p>{{ message }}</p>
   </div>
 </template>
 
 <script>
+import axios from 'axios'; 
 export default {
   name: 'App',
   data() {
     return {
-      count: 0
+      count: 0,
+      message: '',
     }
   },
   methods: {
@@ -22,7 +26,20 @@ export default {
     },
     decrement() {
       this.count--;
+    },
+    fetchData() {
+      // Django API 호출
+      axios.get('http://127.0.0.1:8000/api/hello/')
+        .then(response => {
+          this.message = response.data.message;  // API 응답 메시지를 저장
+        })
+        .catch(error => {
+          console.error('API 호출 실패:', error);
+        });
     }
+  },
+  mounted() {
+    this.fetchData();  // 컴포넌트가 마운트되면 API 호출
   }
 }
 </script>

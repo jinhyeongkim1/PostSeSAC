@@ -8,5 +8,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@angular/core": "^19.1.5",
+    "@angular/router": "^19.1.5"
+  }
 }
